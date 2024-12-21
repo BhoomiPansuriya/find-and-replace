@@ -1,6 +1,25 @@
 # FindAndReplace
 
+This feature includes a Find and Replace form where the "Find and Replace" button is disabled until both search text and input text are entered. Additionally, the replace field is set to read-only, preventing users from manually editing the replacement text.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+
+## Key Features
+
+### Disabled "Find and Replace" Button:
+The "Find and Replace" button is disabled by default.
+The button becomes enabled once both search text and input text are provided.
+
+### Error Handling:
+Appropriate error messages are displayed if the search text or input text is empty.
+
+### Read-Only Replace Field:
+The replace field is set to read-only, preventing manual editing.
+
+### Occurrences Count:
+After finding text/phrases, the total number of occurrences is displayed below the app.
+
+
 
 ## Development server
 
@@ -14,14 +33,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
