@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+            <h1>Content Replacer</h1>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="findandreplaceForm" (ngSubmit)="replaceText()">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="find_textarea" class="form-label"> Input Text</label>
+                        <textarea id="find_textarea" formControlName="find_textarea"
+                            placeholder="Type your content here..." rows="5" class="form-control"></textarea>
+                        <div *ngIf="findandreplaceForm.get('find_textarea')?.invalid && findandreplaceForm.get('find_textarea')?.touched"
+                            class="text-danger">
+                            Input text is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="replace_textarea" class="form-label">Replaced Text</label>
+                        <textarea id="replace_textarea" formControlName="replace_textarea" aria-label="readonly"
+                            readonly rows="5" placeholder="Result will be shown here..."
+                            class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row align-items-end mb-4">
+                    <div class="col-md-4">
+                        <label for="search_text" class="form-label">Search Text</label>
+                        <input id="search_text" formControlName="find_textinput" type="text" class="form-control"
+                            placeholder="Enter text here">
+                        <div *ngIf="findandreplaceForm.get('find_textinput')?.invalid && findandreplaceForm.get('find_textinput')?.touched"
+                            class="text-danger">
+                            Search text is required.
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="replace_text" class="form-label">Replace Text</label>
+                        <input id="replace_text" formControlName="replace_textinput" type="text"
+                            placeholder="Enter text here" class="form-control">
+
+                    </div>
+                    <div class="col-md-2">
+                        <input id="checkbox" type="checkbox" formControlName="matchcase_checkbox" />
+                        <label for="checkbox" class="form-label">Match Case</label>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary w-100" type="submit" [disabled]="!findandreplaceForm.valid">Find
+                            & Replace</button>
+                    </div>
+                </div>
+                <div class="row align-items-end" *ngIf="matchCount>0">
+                    <p> Total {{matchCount}} occurance replaced.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
