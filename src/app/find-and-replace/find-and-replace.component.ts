@@ -37,7 +37,7 @@ export class FindAndReplaceComponent implements OnInit {
     const e = `\\b${this.escapeRegExp(word)}\\b`;
     const isCaseSensitive = this.findandreplaceForm.controls['matchcase_checkbox'].getRawValue()
     const regex = new RegExp(`\\b${e}\\b`, isCaseSensitive ? 'g' : 'gi');
-    this.replacedText = inputText.replace(regex, (match: any) => `<span style="background-color: yellow;">${match}</span>`);
+    this.replacedText = inputText.replace(regex, replaceword);
     this.matchCount = inputText.match(regex, replaceword).length;
     this.findandreplaceForm.controls['replace_textarea'].setValue(this.replacedText);
   }

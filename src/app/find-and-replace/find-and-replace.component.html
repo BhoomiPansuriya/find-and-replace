@@ -7,7 +7,7 @@
             <form [formGroup]="findandreplaceForm" (ngSubmit)="replaceText()">
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <label for="find_textarea" class="form-label"> Input Text</label>
+                        <label for="find_textarea" class="form-label"> Input Text*</label>
                         <textarea id="find_textarea" formControlName="find_textarea"
                             placeholder="Type your content here..." rows="5" class="form-control"></textarea>
                         <div *ngIf="findandreplaceForm.get('find_textarea')?.invalid && findandreplaceForm.get('find_textarea')?.touched"
@@ -24,7 +24,7 @@
                 </div>
                 <div class="row align-items-end mb-4">
                     <div class="col-md-4">
-                        <label for="search_text" class="form-label">Search Text</label>
+                        <label for="search_text" class="form-label">Search Text*</label>
                         <input id="search_text" formControlName="find_textinput" type="text" class="form-control"
                             placeholder="Enter text here">
                         <div *ngIf="findandreplaceForm.get('find_textinput')?.invalid && findandreplaceForm.get('find_textinput')?.touched"
